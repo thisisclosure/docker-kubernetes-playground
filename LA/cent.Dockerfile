@@ -1,11 +1,11 @@
 FROM centos:6 
 
 #redeploy from nginx to httpd
-
 RUN yum install git httpd -y
 
+#old init equivalent of systemd unit file creation
 WORKDIR /etc/init.d
-RUN chkconfig --add httpd #old script equivalent of systemd unit file creation
+RUN chkconfig --add httpd 
 RUN chkconfig httpd on
 
 WORKDIR /home/deploy
@@ -18,4 +18,6 @@ RUN apachectl start #start the service
 
 CMD ["-D", "FOREGROUND"]
 
-ENTRYPOINT ["httpd"] #cannot be over-ridden unlike CMD
+#cannot be over-ridden unlike CMD
+ENTRYPOINT ["httpd"] 
+
