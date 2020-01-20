@@ -1,4 +1,6 @@
-FROM centos:6 #redeploy from nginx to httpd
+FROM centos:6 
+
+#redeploy from nginx to httpd
 
 RUN yum install git httpd -y
 
