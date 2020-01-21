@@ -1,4 +1,4 @@
- FROM node:alpine3.11
+FROM node:alpine3.11
 
 WORKDIR /home/node/src
 
